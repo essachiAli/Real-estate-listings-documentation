@@ -1,0 +1,62 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+
+' =================================
+' ACTORS (FORCED VERTICAL COLUMN)
+' =================================
+' The 'together' block is the magic fix here. 
+' It forces these 3 to stay grouped together vertically.
+together {
+    actor Admin
+    actor Assistant
+    actor "Visitor" as Client
+}
+
+' This hidden line forces the specific order inside that group
+Admin -[hidden]-> Assistant
+Assistant -[hidden]-> Client
+
+' =================================
+' SYSTEM BOUNDARY
+' =================================
+rectangle "Real Estate Agency System" {
+    
+    ' Assistant Use Cases
+    usecase "Interview Property Owner" as UC_Interview
+    usecase "Create Property Listing" as UC_Create
+    usecase "Submit Listing for Validation" as UC_Submit
+    
+    ' Client Use Cases
+    usecase "Browse Properties" as UC_Browse
+    usecase "Search & Filter Listings" as UC_Search
+    usecase "View Property Details" as UC_View
+    usecase "Contact Agency" as UC_Contact
+    
+    ' Admin Use Case
+    usecase "Validate Property Listing" as UC_Validate
+}
+
+' =================================
+' CONNECTIONS
+' =================================
+' Admin
+Admin --> UC_Validate
+
+' Assistant
+Assistant -- UC_Interview
+Assistant -- UC_Create
+Assistant -- UC_Submit
+
+' Client
+Client -- UC_Browse
+Client -- UC_Search
+Client -- UC_View
+Client -- UC_Contact
+
+' =================================
+' INCLUDES
+' =================================
+UC_Create ..> UC_Interview : <<includes>>
+UC_Submit ..> UC_Validate : <<includes>>
+@enduml
