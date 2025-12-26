@@ -5,9 +5,9 @@
 # who : Ayoub Jalyta 
 
 ----
-# lab 01: Déploiment
+# lab 02: Déploiment
 # who : ESSAMRACHI ALI
 
 ----
-# lab 01:  php deployment
+# lab 03:  php deployment
 # who : Adnane Keskuse
