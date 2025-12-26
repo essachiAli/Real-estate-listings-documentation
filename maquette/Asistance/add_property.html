@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-gray-50">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Property - RealEstate Pro</title>
+    <!-- Tailwind CSS 4+ CDN -->
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <style>
+        body {
+            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+    </style>
+</head>
+<body class="h-full">
+    <div class="min-h-full">
+        <!-- Top Navigation -->
+        <nav class="bg-white border-b border-gray-200">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="flex h-16 justify-between">
+                    <div class="flex">
+                        <div class="flex flex-shrink-0 items-center gap-2">
+                             <!-- Simple Logo -->
+                             <svg class="h-8 w-8 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z" />
+                            </svg>
+                            <span class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-indigo-500 hidden md:block">RealEstate Pro</span>
+                        </div>
+                        <div class="ml-6 flex items-center">
+                            <h1 class="text-lg font-semibold text-gray-900 border-l border-gray-200 pl-6">Assistant Dashboard</h1>
+                        </div>
+                    </div>
+                    
+                    <!-- User Dropdown -->
+                    <div class="flex items-center">
+                        <div class="relative ml-3 group">
+                            <div>
+                                <button type="button" class="flex max-w-xs items-center rounded-full bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                                    <span class="sr-only">Open user menu</span>
+                                    <span class="mr-3 hidden md:block text-sm font-medium text-gray-700">Sarah Jenkins</span>
+                                    <img class="h-8 w-8 rounded-full bg-gray-100" src="https://ui-avatars.com/api/?name=Sarah+Jenkins&background=random" alt="">
+                                </button>
+                            </div>
+                            
+                            <!-- Dropdown menu -->
+                            <div class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black/5 focus:outline-none invisible group-hover:visible transition-all opacity-0 group-hover:opacity-100 transform duration-200" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
+                                <div class="border-t border-gray-100 my-1"></div>
+                                <a href="#" class="block px-4 py-2 text-sm text-red-600 hover:bg-red-50" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="py-10">
+            <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+                
+                <div class="md:flex md:items-center md:justify-between mb-8">
+                    <div class="min-w-0 flex-1">
+                        <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight">Add New Property</h2>
+                        <p class="mt-1 text-sm text-gray-500">Fill in the details below to submit a new property for review.</p>
+                    </div>
+                </div>
+
+                <!-- Form Card -->
+                <form action="dashboard-asistance.html" method="GET" class="bg-white shadow-sm ring-1 ring-gray-900/5 sm:rounded-xl md:col-span-2">
+                    <div class="px-4 py-6 sm:p-8">
+                        <div class="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+                            
+                            <!-- Section 1: Basic Info -->
+                            <div class="col-span-full">
+                                <h3 class="text-base font-semibold leading-7 text-gray-900">Basic Information</h3>
+                                <p class="mt-1 text-sm leading-6 text-gray-600">Key details about the property listing.</p>
+                            </div>
+
+                            <div class="sm:col-span-4">
+                                <label for="title" class="block text-sm font-medium leading-6 text-gray-900">Property Title</label>
+                                <div class="mt-2">
+                                    <input type="text" name="title" id="title" autocomplete="off" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 pl-3" placeholder="e.g. Modern Apartment in Downtown">
+                                </div>
+                            </div>
+
+                            <div class="sm:col-span-2">
+                                <label for="property-type" class="block text-sm font-medium leading-6 text-gray-900">Property Type</label>
+                                <div class="mt-2">
+                                    <select id="property-type" name="property-type" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6 pl-3">
+                                        <option>Apartment</option>
+                                        <option>House</option>
+                                        <option>Villa</option>
+                                        <option>Land</option>
+                                        <option>Commercial</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="sm:col-span-3">
+                                <label for="price" class="block text-sm font-medium leading-6 text-gray-900">Price ($)</label>
+                                <div class="mt-2">
+                                    <input type="number" name="price" id="price" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 pl-3" placeholder="0.00">
+                                </div>
+                            </div>
+
+                            <div class="sm:col-span-3">
+                                <label for="location" class="block text-sm font-medium leading-6 text-gray-900">Location</label>
+                                <div class="mt-2">
+                                    <input type="text" name="location" id="location" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 pl-3" placeholder="City, Address">
+                                </div>
+                            </div>
+
+                            <div class="col-span-full border-t border-gray-900/10 mt-2 pt-6"></div>
+
+                            <!-- Section 2: Description -->
+                            <div class="col-span-full">
+                                <label for="description" class="block text-sm font-medium leading-6 text-gray-900">Description</label>
+                                <p class="mt-1 text-sm leading-6 text-gray-600">Write a few details about the property.</p>
+                                <div class="mt-2">
+                                    <textarea id="description" name="description" rows="4" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 pl-3" placeholder="Describe the property features, surroundings, and key selling points..."></textarea>
+                                </div>
+                            </div>
+
+                            <div class="col-span-full border-t border-gray-900/10 mt-2 pt-6"></div>
+
+                            <!-- Section 3: Features -->
+                            <div class="col-span-full">
+                                <h3 class="text-base font-semibold leading-7 text-gray-900">Features & Amenities</h3>
+                                <div class="mt-4 grid grid-cols-1 gap-y-4 sm:grid-cols-2 md:grid-cols-3">
+                                    <div class="relative flex gap-x-3">
+                                        <div class="flex h-6 items-center">
+                                            <input id="parking" name="parking" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                        </div>
+                                        <div class="text-sm leading-6">
+                                            <label for="parking" class="font-medium text-gray-900">Parking Space</label>
+                                        </div>
+                                    </div>
+                                    <div class="relative flex gap-x-3">
+                                        <div class="flex h-6 items-center">
+                                            <input id="garden" name="garden" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                        </div>
+                                        <div class="text-sm leading-6">
+                                            <label for="garden" class="font-medium text-gray-900">Garden</label>
+                                        </div>
+                                    </div>
+                                    <div class="relative flex gap-x-3">
+                                        <div class="flex h-6 items-center">
+                                            <input id="pool" name="pool" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                        </div>
+                                        <div class="text-sm leading-6">
+                                            <label for="pool" class="font-medium text-gray-900">Swimming Pool</label>
+                                        </div>
+                                    </div>
+                                    <div class="relative flex gap-x-3">
+                                        <div class="flex h-6 items-center">
+                                            <input id="balcony" name="balcony" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                        </div>
+                                        <div class="text-sm leading-6">
+                                            <label for="balcony" class="font-medium text-gray-900">Balcony / Terrace</label>
+                                        </div>
+                                    </div>
+                                    <div class="relative flex gap-x-3">
+                                        <div class="flex h-6 items-center">
+                                            <input id="furnished" name="furnished" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                        </div>
+                                        <div class="text-sm leading-6">
+                                            <label for="furnished" class="font-medium text-gray-900">Furnished</label>
+                                        </div>
+                                    </div>
+                                    <div class="relative flex gap-x-3">
+                                        <div class="flex h-6 items-center">
+                                            <input id="security" name="security" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                        </div>
+                                        <div class="text-sm leading-6">
+                                            <label for="security" class="font-medium text-gray-900">24/7 Security</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-span-full border-t border-gray-900/10 mt-2 pt-6"></div>
+
+                            <!-- Section 4: Images -->
+                            <div class="col-span-full">
+                                <label for="cover-photo" class="block text-sm font-medium leading-6 text-gray-900">Property Images</label>
+                                <div class="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10 bg-gray-50/50 hover:bg-gray-50 transition-colors">
+                                    <div class="text-center">
+                                        <svg class="mx-auto h-12 w-12 text-gray-300" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                        <path fill-rule="evenodd" d="M1.5 6a2.25 2.25 0 012.25-2.25h16.5A2.25 2.25 0 0122.5 6v12a2.25 2.25 0 01-2.25 2.25H3.75A2.25 2.25 0 011.5 18V6zM3 16.06V18c0 .414.336.75.75.75h16.5A.75.75 0 0021 18v-1.94l-2.69-2.689a1.5 1.5 0 00-2.12 0l-.88.879.97.97a.75.75 0 11-1.06 1.06l-5.16-5.159a1.5 1.5 0 00-2.12 0L3 16.061zm10.125-7.81a1.125 1.125 0 112.25 0 1.125 1.125 0 01-2.25 0z" clip-rule="evenodd" />
+                                        </svg>
+                                        <div class="mt-4 flex text-sm leading-6 text-gray-600 justify-center">
+                                            <label for="file-upload" class="cursor-pointer rounded-md bg-white font-semibold text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 px-1">
+                                                <span>Upload files</span>
+                                                <input id="file-upload" name="file-upload" type="file" class="sr-only" multiple>
+                                            </label>
+                                            <p class="pl-1">or drag and drop</p>
+                                        </div>
+                                        <p class="text-xs leading-5 text-gray-600">PNG, JPG, GIF up to 5MB</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Image Placeholders Grid -->
+                                <div class="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-4">
+                                    <div class="aspect-square rounded-lg bg-gray-100 border border-gray-200 flex items-center justify-center">
+                                        <span class="text-xs text-gray-400">Preview 1</span>
+                                    </div>
+                                    <div class="aspect-square rounded-lg bg-gray-100 border border-gray-200 flex items-center justify-center">
+                                        <span class="text-xs text-gray-400">Preview 2</span>
+                                    </div>
+                                    <div class="aspect-square rounded-lg bg-gray-100 border border-gray-200 flex items-center justify-center">
+                                        <span class="text-xs text-gray-400">Preview 3</span>
+                                    </div>
+                                    <div class="aspect-square rounded-lg bg-gray-100 border border-gray-200 flex items-center justify-center">
+                                        <span class="text-xs text-gray-400">Preview 4</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    
+                    <!-- Form Actions -->
+                    <div class="flex items-center justify-end gap-x-6 border-t border-gray-900/10 px-4 py-4 sm:px-8 bg-gray-50/50 sm:rounded-b-xl">
+                        <a href="dashboard-asistance.html" class="text-sm font-semibold leading-6 text-gray-900">Cancel</a>
+                        <button type="submit" class="rounded-md bg-indigo-600 px-6 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-colors">Submit for Review</button>
+                    </div>
+                </form>
+
+            </div>
+        </main>
+    </div>
+</body>
+</html>
