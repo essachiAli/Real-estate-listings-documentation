@@ -1,8 +1,8 @@
-Ayoub Jalyta:
-# Laravel Deployment
+# Ayoub Jalyta:
+Laravel Deployment
 ----
-ESSAMRACHI ALI:
-# Déploiment
+# ESSAMRACHI ALI:
+Déploiment
 ----
-Adnane Keskuse
-# php deployment
+# Adnane Keskuse
+ php deployment
