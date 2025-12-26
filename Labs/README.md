@@ -1,7 +1,13 @@
-# Ayoub Jalyta: Laravel Deployment
+# labs list
+
+
+# lab 01: Laravel Deployment
+# who : Ayoub Jalyta 
 
 ----
-# ESSAMRACHI ALI: Déploiment
+# lab 01: Déploiment
+# who : ESSAMRACHI ALI
 
 ----
-# Adnane Keskuse:  php deployment
+# lab 01:  php deployment
+# who : Adnane Keskuse
