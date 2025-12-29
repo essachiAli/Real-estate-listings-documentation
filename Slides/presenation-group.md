@@ -52,7 +52,7 @@ Mr. ESSARRAJ Fouad
   * Validation progressive des livrables
   * Adaptabilité aux changements
 
-  ![Use Case](/Slides/scrum-methodology.webp)
+  ![Use Case](/Slides/images/scrum-methodology.webp)
 
 ### Recherche & Inspiration
 
@@ -98,7 +98,7 @@ Les agences immobilières ont besoin d’un système centralisé pour :
 * Consultation et recherche de biens
 * Contact direct avec l’agence
 
-![Use Case](/Slides/use-case.png)
+![Use Case](/Slides/images/use-case.png)
 
  *Le diagramme illustre clairement la séparation des responsabilités et le flux de validation.*
 
@@ -110,11 +110,11 @@ Les agences immobilières ont besoin d’un système centralisé pour :
 
 1. **Page d’Accueil**
 
-![Use Case](/Slides/home.png)
+![Use Case](/Slides/images/home.png)
 
 2. **Page Properties**
 
-![Use Case](/Slides/listings.png)
+![Use Case](/Slides/images/listings.png)
 
 3. **Page Property Details**
 
@@ -122,7 +122,7 @@ Les agences immobilières ont besoin d’un système centralisé pour :
    * Galerie d’images
    * Contact agent (WhatsApp / Appel)
 
-![Use Case](/Slides/listing-details.png)
+![Use Case](/Slides/images/listing-details.png)
 
 
 
