@@ -6,6 +6,7 @@
 
 **Team Members :**
 
+* Essamrachi Ali
 * Adnane Kesksu
 * Ayoub Jalyta
 
