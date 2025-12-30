@@ -1,0 +1,39 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+skinparam actorStyle awesome
+
+' =========================
+' ACTEUR
+' =========================
+actor "Visiteur" as Visitor
+
+' =========================
+' SYSTEM
+' =========================
+rectangle "Plateforme Immobilière\n(Sprint 1 – Visiteur & Découverte)" {
+
+  usecase "Consulter la liste\ndes biens" as UC_List
+  usecase "Consulter le détail\nd’un bien" as UC_Detail
+  usecase "Rechercher un bien" as UC_Search
+  usecase "Filtrer les biens" as UC_Filter
+  usecase "Contacter l’agence\npour un bien" as UC_Contact
+}
+
+' =========================
+' RELATIONS ACTEUR → USE CASES
+' =========================
+Visitor --> UC_List
+Visitor --> UC_Detail
+Visitor --> UC_Search
+Visitor --> UC_Filter
+Visitor --> UC_Contact
+
+' =========================
+' RELATIONS ENTRE USE CASES
+' =========================
+UC_Search ..> UC_List : <<extend>>
+UC_Filter ..> UC_List : <<extend>>
+UC_Contact ..> UC_Detail : <<extend>>
+
+@enduml
