@@ -1,28 +1,69 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full bg-gray-50">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RealEstate Pro</title>
+    <meta name="description" content="RealEstate Pro - Layout Base">
+    <title>SoliCode MVP - Layout Base</title>
+    
+    <!-- Google Fonts: Inter & Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    
     <!-- Tailwind CSS 4+ CDN -->
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-    <!-- Font Inter (Optional but recommended) -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
-        body { font-family: 'Inter', sans-serif; }
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+        }
     </style>
 </head>
-<body class="h-full text-gray-900 antialiased">
-    
-    <!-- Header/Navbar Space -->
-    <!-- COMPONENT: navbar.html -->
+<body class="bg-gray-50 text-gray-900 font-sans antialiased flex flex-col min-h-screen">
 
-    <main>
-        <!-- Page Content Goes Here -->
+    <!-- Header / Navbar Placeholder -->
+    <!-- Matches index.html styling: bg-white/95 backdrop-blur-sm shadow-sm sticky top-0 z-50 -->
+    <header id="navbar-placeholder" class="bg-white/95 backdrop-blur-sm shadow-sm sticky top-0 z-50 h-16 transition-all duration-300 border-b border-gray-200">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-full flex items-center justify-center border-2 border-dashed border-gray-300 rounded m-1 bg-gray-50/50 text-gray-400 text-sm font-medium">
+            [ Navbar Component Area ]
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow w-full mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+        
+        <!-- Hero Placeholder -->
+        <div class="rounded-2xl border-2 border-dashed border-gray-300 h-64 flex items-center justify-center bg-white text-gray-400 text-sm font-medium mb-12">
+            [ Hero / Page Header Component Area ]
+        </div>
+
+        <h1 class="font-heading text-3xl font-bold text-gray-900 mb-6">Main Content Area</h1>
+
+        <!-- Example Content Grid -->
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white rounded-2xl shadow-sm p-6 h-48 border border-gray-100 flex items-center justify-center text-gray-400 border-dashed border-2">
+                [ Content Block 1 ]
+            </div>
+            <div class="bg-white rounded-2xl shadow-sm p-6 h-48 border border-gray-100 flex items-center justify-center text-gray-400 border-dashed border-2">
+                [ Content Block 2 ]
+            </div>
+            <div class="bg-white rounded-2xl shadow-sm p-6 h-48 border border-gray-100 flex items-center justify-center text-gray-400 border-dashed border-2">
+                [ Content Block 3 ]
+            </div>
+        </div>
+
     </main>
 
-    <!-- Footer Space -->
-    <!-- COMPONENT: footer.html -->
+    <!-- Footer Placeholder -->
+    <!-- Matches index.html styling: bg-gray-900 text-white -->
+    <footer id="footer-placeholder" class="bg-gray-900 text-white mt-auto">
+        <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+            <div class="border-2 border-dashed border-gray-700 rounded-xl h-40 flex items-center justify-center bg-gray-800/50 text-gray-400 text-sm font-medium">
+                [ Footer Component Area ]
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
