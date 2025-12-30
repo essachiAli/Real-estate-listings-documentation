@@ -1,8 +1,3 @@
-Below is the **complete, final rewrite of Sprint 1**, fully aligned with the **latest validated conception**, your `Property` model, and the pedagogical structure you want.
-Nothing unnecessary was added; everything is **Sprint-1-clean, visitor-focused, and technically consistent**.
-
----
-
 # 🟢 Sprint 1 : Visiteur & Découverte (Plateforme Immobilière)
 
 ---
@@ -15,34 +10,35 @@ Pour réussir ce Sprint, les compétences suivantes doivent être maîtrisées.
 
 * ✅ **Session S3 :** Lancement Laravel & Interface Publique
   *(Routing, Controllers, Blade, MVC)*
-  **Acquis :** Création d’une interface publique dynamique avec navigation.
+  **Acquis :** Création d’une interface publique dynamique.
 * ✅ **Session S4 :** Base de Données & Modèles
-  *(Migrations, Eloquent, Factories)*
-  **Acquis :** Modélisation de données simples et exploitation côté frontend.
+  *(Migrations, Eloquent, Factories, Seeders)*
+  **Acquis :** Manipulation et alimentation de la base de données.
 
 ---
 
 ### 🔬 Labs & Veille
 
-* 🧪 **Lab Vite :** Configuration et compilation de Tailwind CSS via Vite.
-* 🧪 **Lab AJAX :** Recherche et filtrage dynamiques (fetch / axios).
+* 🧪 **Lab Vite :** Configuration de Tailwind CSS via Vite.
+* 🧪 **Lab AJAX :** Recherche et filtrage dynamiques.
+* 🧪 **Lab CSV :** Import de données depuis un fichier CSV en Laravel.
 * 📚 **Veille UX/UI :** Parcours utilisateur immobilier (Découverte → Détail).
-* 🎨 **Veille UI Kit :** Preline UI (cartes, badges, grilles).
+* 🎨 **Veille UI Kit :** Preline UI (cartes, badges).
 
 ---
 
 ## 1. 🎯 Besoin
 
-**Objectif :** Permettre aux visiteurs de **découvrir les biens immobiliers publiés** via une interface moderne et fluide.
+**Objectif :** Permettre aux visiteurs de **découvrir des biens immobiliers publiés**, avec des **données réalistes importées depuis un fichier CSV**.
 
 Fonctionnalités attendues :
 
-* Consulter la liste des biens disponibles
-* Rechercher et filtrer rapidement
+* Consulter des annonces crédibles (données réelles ou semi-réelles)
+* Rechercher et filtrer efficacement
 * Accéder au détail complet d’un bien
-* Offrir une expérience claire et rassurante (sans connexion)
+* Bénéficier d’un socle de données stable pour les sprints suivants
 
-> 🧱 Ce Sprint constitue le **socle public** de la plateforme.
+> 📌 Le CSV remplace la saisie manuelle et garantit un dataset cohérent.
 
 ---
 
@@ -50,17 +46,13 @@ Fonctionnalités attendues :
 
 ### Cas d’Utilisation (Use Cases)
 
-* **Lister les biens**
-  → Affichage en grille des annonces *publiées*.
-* **Consulter un bien**
-  → Page détail accessible via slug SEO.
-* **Rechercher**
-  → Recherche dynamique par localisation, prix, type.
-* **Filtrer**
-  → Filtres combinables sans rechargement de page.
+* **Lister les biens** → Grille publique
+* **Consulter un bien** → Page détail via slug
+* **Rechercher** → Par localisation, prix, type
+* **Filtrer** → Sans rechargement (AJAX)
 
 📄 **Diagramme UML :**
-`Fonctionnalités-et-cas-d'utilisation/sprint-01-visiteur-decouverte.puml`
+`sprint-01-visiteur-decouverte.puml`
 
 ---
 
@@ -90,9 +82,10 @@ updated_at
 
 🔎 **Portée Sprint 1**
 
-* Le modèle `Property` est **autonome**
-* Seuls les biens avec `status = published` sont visibles
-* Aucune relation ni authentification à ce stade
+* Le modèle `Property` est autonome
+* Les données sont **injectées via CSV**
+* Seuls les biens `published` sont visibles
+* Pas de relations, pas d’authentification
 
 ---
 
@@ -100,43 +93,24 @@ updated_at
 
 *(Non implémentées)*
 
-* `User` (Agent / Admin) – Sprint 3
-* `Inquiry` (Contact) – Sprint 4
-* `Role` (RBAC) – Sprint 3
-* `PropertyType`, `City` – Normalisation (Sprint 2)
+* `User` – Sprint 3
+* `Inquiry` – Sprint 4
+* `Role` – Sprint 3
+* `PropertyType`, `City` – Sprint 2
 
 ---
 
 ### 🎨 Maquettage UI (Interface Publique)
 
-#### Pages Publiques Clés
+* **Accueil (`/`)** – Grille de cartes immobilières
+* **Détail (`/properties/{slug}`)** – Informations complètes
+* **Recherche (`/search`)** – Résultats dynamiques
 
-* **Accueil (`/`)**
+Orientation UI :
 
-  * Grille de cartes immobilières
-  * Informations visibles :
-
-    * Titre
-    * Prix
-    * Localisation
-    * Badge Type (Vente / Location)
-    * Résumé (surface, chambres)
-
-* **Détail Bien (`/properties/{slug}`)**
-
-  * Description complète
-  * Détails techniques
-  * Localisation
-  * Bouton *Contacter l’agence* (placeholder)
-
-* **Recherche (`/search`)**
-
-  * Recherche par :
-
-    * Localisation
-    * Fourchette de prix
-    * Type d’annonce
-  * Résultats dynamiques (AJAX)
+* Prix mis en avant
+* Badge type (rent / sale)
+* Localisation claire
 
 ---
 
@@ -144,47 +118,63 @@ updated_at
 
 ### 🔧 Setup
 
-* [ ] Initialisation **Laravel 12**
-* [ ] Git Flow (`main`, `develop`, `sprint-1`)
-* [ ] Configuration **Tailwind + Preline UI via Vite**
-  ⛔ *Aucun CDN autorisé*
+* [ ] Laravel 12 + Git Flow (`sprint-1`)
+* [ ] Tailwind + Preline UI via Vite
+  ⛔ Pas de CDN
 
 ---
 
 ### ⚙️ Backend
 
+#### 🗄️ Base de Données
+
 * [ ] Migration `properties`
-* [ ] Factory `PropertyFactory` (20 biens réalistes)
-* [ ] Seeder `PropertySeeder`
-* [ ] `PublicPropertyController`
+* [ ] Ajout champ `slug` (unique)
+* [ ] Index sur `status`, `price`, `location`
 
-  * `index()` – Liste publique
-  * `show()` – Détail via slug
-* [ ] **Service Layer (obligatoire)**
+---
 
-  * `PropertyService`
+#### 📥 Import CSV (Tâche Clé Sprint 1)
 
-    * Filtrage
-    * Recherche
-    * Pagination
+* [ ] Création d’un fichier `properties.csv`
+* [ ] Commande Artisan :
+
+  ```bash
+  php artisan properties:import-csv
+  ```
+* [ ] Lecture CSV ligne par ligne
+* [ ] Mapping CSV → modèle `Property`
+* [ ] Génération automatique du `slug`
+* [ ] Validation minimale des données
+* [ ] Insertion en base
+
+📌 **Le CSV est stocké dans** `storage/app/data/properties.csv`
+
+---
+
+#### 🔧 Services
+
+* [ ] `PropertyService`
+
+  * `getPublicProperties(array $filters)`
+  * `getBySlug(string $slug)`
 
 ---
 
 ### 🎨 Frontend (Blade)
 
-* [ ] **Layouts**
+* [ ] `layouts/public.blade.php`
+* [ ] `layouts/admin.blade.php` *(vide – Sprint 2)*
+* [ ] `properties/index.blade.php`
+* [ ] `properties/show.blade.php`
+* [ ] `components/property-card.blade.php`
 
-  * `layouts/public.blade.php`
-  * `layouts/admin.blade.php` *(structure vide – préparation Sprint 2)*
-* [ ] **Vues**
+---
 
-  * `properties/index.blade.php`
-  * `properties/show.blade.php`
-  * `components/property-card.blade.php`
-* [ ] **AJAX**
+### ⚡ AJAX
 
-  * Recherche instantanée
-  * Filtres dynamiques
+* [ ] Recherche instantanée
+* [ ] Filtres dynamiques (prix, type, localisation)
 
 ---
 
@@ -193,15 +183,14 @@ updated_at
 ```mermaid
 classDiagram
     class PropertyService {
-        %% Sprint 1 – Public
         +Paginator getPublicProperties(array filters)
         +Property getBySlug(string slug)
+    }
 
-        %% Sprint 2 – Back-Office
-        +Property create(array data)
-        +Property update(Property property, array data)
-        +bool delete(Property property)
-        -string uploadImage(UploadedFile file)
+    class CsvPropertyImporter {
+        +void import(string path)
+        -array mapRow(array row)
+        -string generateSlug(string title)
     }
 ```
 
@@ -209,10 +198,11 @@ classDiagram
 
 ## ✅ Definition of Done (Sprint 1)
 
+* Données chargées depuis CSV
+* Aucune saisie manuelle requise
 * Interface publique fonctionnelle
-* Uniquement les biens `published` sont visibles
-* Recherche & filtres dynamiques opérationnels
-* Architecture MVC + Service Layer respectée
-* UX fluide, responsive et claire
+* Filtres & recherche opérationnels
+* Architecture Service Layer respectée
+* Base prête pour CRUD (Sprint 2)
 
 ---
