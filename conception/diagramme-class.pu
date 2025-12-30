@@ -1,0 +1,97 @@
+@startuml
+' PlantUML Class Diagram
+' Best used for visualizing inheritance, methods, and relationships.
+
+skinparam linetype ortho
+skinparam nodesep 50
+skinparam ranksep 50
+
+class User {
+  +id: int
+  +name: string
+  +email: string
+  +password: string
+  +phone: string
+  +email_verified_at: timestamp
+  +remember_token: string
+  +login()
+  +logout()
+}
+
+class Role {
+  +id: int
+  +name: string
+  +guard_name: string
+}
+
+class Permission {
+  +id: int
+  +name: string
+  +guard_name: string
+}
+
+class Category {
+  +id: int
+  +name: string
+  +slug: string
+  +icon: string
+}
+
+class Property {
+  +id: int
+  +title: string
+  +slug: string
+  +description: string
+  +price: decimal
+  +location: string
+  +bedrooms: int
+  +bathrooms: int
+  +surface: int
+  +listing_type: string
+  +status: string
+  +create()
+  +edit()
+  +submitForApproval()
+  +approve()
+  +reject()
+}
+
+class PropertyImage {
+  +id: int
+  +path: string
+  +is_primary: boolean
+}
+
+class ContactInquiry {
+  +id: int
+  +visitor_name: string
+  +visitor_email: string
+  +message: string
+  +sent_at: datetime
+}
+
+class PersonalAccessToken {
+  +id: int
+  +tokenable_id: int
+  +tokenable_type: string
+  +name: string
+  +token: string
+  +abilities: text
+  +last_used_at: timestamp
+  +expires_at: timestamp
+}
+
+' Relationships
+User "1" -- "*" Role : has
+User "1" -- "*" Permission : has
+User "1" -- "*" Property : manages (as Assistant)
+User "1" -- "*" Property : validates (as Admin)
+User "1" -- "*" PersonalAccessToken : has
+Category "1" -- "*" Property : classifies
+Property "1" -- "*" PropertyImage : has
+Property "1" -- "*" ContactInquiry : receives
+
+' Pivots
+note bottom of Role : Pivot: role_has_permissions
+note bottom of User : Pivots: model_has_roles, model_has_permissions
+@enduml
