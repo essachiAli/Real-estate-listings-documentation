@@ -1,27 +1,26 @@
-## 🟠 Sprint 3 : Auth & Rôles (Sécurité RBAC)
+# 🟠 Sprint 3: Auth & Rôles (Sécurité RBAC)
 
-**Sprint Goal:** Secure the system with strict role separation.
+## 📋 Pré-requis Pédagogiques
+- Sessions: Auth with Breeze; Permissions.
+- Labs: Middleware/Policies.
 
-### User Stories
+## 1. Besoin
+Objectif: Secure access by roles (Visitor anon, Assistant CRUD, Admin approve).
 
-| ID | User Story                                     | Points |
-| -- | ---------------------------------------------- | ------ |
-| A1 | As a user, I want to authenticate securely     | 5      |
-| A2 | As an admin, I want full control over listings | 5      |
-| A3 | As an assistant, I want limited CRUD access    | 5      |
-| A4 | As a system, I want role-based access control  | 3      |
+## 2. 🔍 Analyse
+Use Cases: Login; Role-based routes; Approval queue for admins.
+Diagram: User-Role-Permission relations.
 
-### Deliverables
+## 3. 🏗️ Conception
+Auth: Breeze + Spatie Permission.
+Guards: Web for roles.
 
-* Authentication (login/logout)
-* Roles: Admin / Assistant / Visitor
-* Policies & middleware
-* Admin validation of listings
+## 4. 💻 Réalisation (Tâches)
+- [ ] Install Breeze (Blade/Tailwind); Spatie Permission.
+- [ ] Migrations: Roles (Admin, Assistant), Permissions.
+- [ ] Middleware: Protect admin routes.
+- [ ] AdminController: approve/reject actions on Property.
+- [ ] Views: Login; Approval dashboard.
+- [ ] Policies: Assistant can edit own properties only.
 
-**DoD**
-
-* Assistants cannot publish
-* Admin approval required
-* Visitors blocked from back-office
-
----
+Sprint Goal: Role-secured system. Burndown: 13 points. DoD: Security audits.

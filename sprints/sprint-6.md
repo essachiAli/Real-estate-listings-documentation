@@ -1,24 +1,23 @@
-## 📱 Sprint 6 : Mobile (App Android)
+# 📱 Sprint 6: Mobile (App Android)
 
-**Sprint Goal:** Deliver a mobile real estate experience.
+## 📋 Pré-requis Pédagogiques
+- Sessions: Kotlin Basics; Retrofit for API.
+- Labs: Android UI with Jetpack.
 
-### User Stories
+## 1. Besoin
+Objectif: Android app consuming API for browsing/contact.
 
-| ID | User Story                                         | Points |
-| -- | -------------------------------------------------- | ------ |
-| M1 | As a mobile user, I want to browse properties      | 5      |
-| M2 | As a mobile user, I want to search & filter        | 5      |
-| M3 | As a mobile user, I want to view details & contact | 5      |
+## 2. 🔍 Analyse
+Use Cases: List/search properties; View details; Send inquiry.
 
-### Deliverables
+## 3. 🏗️ Conception
+App: Kotlin; MVVM; API integration.
 
-* Mobile-optimized UI
-* Basic offline handling
+## 4. 💻 Réalisation (Tâches)
+- [ ] Setup Android Studio project.
+- [ ] Screens: Home (list), Detail, Search.
+- [ ] Retrofit: Call API endpoints.
+- [ ] Auth: Token handling.
+- [ ] Offline: Basic caching.
 
-**DoD**
-
-* Feature parity with web visitor side
-* Stable API consumption
-* Production-ready APK
-
----
+Sprint Goal: Functional mobile app. Burndown: 13 points. DoD: App testing on emulators.

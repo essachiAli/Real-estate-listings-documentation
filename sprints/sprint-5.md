@@ -1,25 +1,24 @@
-## 🟣 Sprint 5 : API REST (Data Exposition)
+# 🟣 Sprint 5: API REST (Data Exposition)
 
-**Sprint Goal:** Expose system data for external consumption.
+## 📋 Pré-requis Pédagogiques
+- Sessions: API Routes/Resources.
+- Labs: Sanctum Tokens.
 
-### User Stories
+## 1. Besoin
+Objectif: Expose data via REST for mobile.
 
-| ID   | User Story                                      | Points |
-| ---- | ----------------------------------------------- | ------ |
-| API1 | As a system, I want REST endpoints for listings | 5      |
-| API2 | As a client app, I want filtered property data  | 5      |
-| API3 | As an admin, I want secure API access           | 3      |
+## 2. 🔍 Analyse
+Use Cases: GET properties; Auth endpoints.
+Diagram: Use existing models.
 
-### Deliverables
+## 3. 🏗️ Conception
+API: Sanctum for auth; Resources for JSON.
 
-* REST API (properties, comments)
-* Authentication (tokens)
-* API documentation
+## 4. 💻 Réalisation (Tâches)
+- [ ] Install Sanctum.
+- [ ] API Routes: /api/properties, /api/auth.
+- [ ] Resources: PropertyResource.
+- [ ] Controllers: ApiPropertyController.
+- [ ] Filtering with Query Builder.
 
-**DoD**
-
-* Read-only public endpoints
-* Secure private endpoints
-* Consistent JSON responses
-
----
+Sprint Goal: Consumable API. Burndown: 13 points. DoD: API docs (Swagger).

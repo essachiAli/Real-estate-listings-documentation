@@ -1,25 +1,25 @@
-## 🔵 Sprint 4 : Communauté (Commentaires)
+# 🔵 Sprint 4: Communauté (Commentaires)
 
-**Sprint Goal:** Add interaction and trust signals.
+## 📋 Pré-requis Pédagogiques
+- Sessions: Relations/Polymorphic.
+- Labs: Blade Components for Comments.
 
-### User Stories
+## 1. Besoin
+Objectif: Visitors comment on properties; Admins moderate.
 
-| ID | User Story                                     | Points |
-| -- | ---------------------------------------------- | ------ |
-| C1 | As a visitor, I want to comment on listings    | 5      |
-| C2 | As a system, I want comments moderated         | 5      |
-| C3 | As an admin, I want to approve/reject comments | 3      |
+## 2. 🔍 Analyse
+Use Cases: Post/view comments; Moderation.
+Diagram: Property-ContactInquiry (adapt for comments).
 
-### Deliverables
+## 3. 🏗️ Conception
+DB: ContactInquiry as Comment model.
+UI: Comment section on property detail.
 
-* Comment system (per property)
-* Comment moderation
-* Admin moderation panel
+## 4. 💻 Réalisation (Tâches)
+- [ ] Migrations: Comment model linked to Property/User.
+- [ ] CommentController: Store/show.
+- [ ] Service: CommentService (moderation logic).
+- [ ] Views: Add comments to property.show.blade.php.
+- [ ] Admin moderation queue.
 
-**DoD**
-
-* No public comment without validation
-* Spam protected
-* Linked to property details
-
----
+Sprint Goal: Interactive community features. Burndown: 13 points. DoD: Spam prevention.

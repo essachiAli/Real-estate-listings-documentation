@@ -48,12 +48,8 @@ class Property {
   +bathrooms: int
   +surface: int
   +listing_type: string
-  +status: string
-  +create()
-  +edit()
-  +submitForApproval()
-  +approve()
-  +reject()
+  +status: enum
+
 }
 
 class PropertyImage {
